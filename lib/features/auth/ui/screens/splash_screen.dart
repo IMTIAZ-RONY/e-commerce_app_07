@@ -1,5 +1,7 @@
 import 'package:e_commerce_app_07/features/auth/ui/screens/email_verification_screen.dart';
 import 'package:flutter/material.dart';
+import '../../../common/ui/screens/main_bottom_nav_screen.dart';
+import '../../../home/ui/screens/home_screen.dart';
 import '../widgets/app_log_widget.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -18,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _moveToNextScreen() async {
     await Future.delayed(const Duration(seconds: 2));
-    Navigator.pushReplacementNamed(context, EmailVerificationScreen.name);
+    Navigator.pushReplacementNamed(context, MainBottomNavScreen.name);
   }
 
   @override
