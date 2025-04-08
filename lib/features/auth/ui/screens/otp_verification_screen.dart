@@ -107,7 +107,7 @@ void _startResendCodeTimer(){
                     onPressed: () {
                       // if(_formKey.currentState!.validate()){}
                       Navigator.pushNamed(context, CompleteProfileScreen.name);
-                      // Navigator.push(context, MaterialPageRoute(builder:(context)=>OtpVerificationScreen()));
+                      // Navigator.push(context, MaterialPageRoute(builder:(context)=>CompleteVerificationScreen()));
                     },
                     child: Text(
                       "Next",
