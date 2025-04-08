@@ -1,9 +1,5 @@
-import 'package:e_commerce_app_07/app/app_colors.dart';
-import 'package:e_commerce_app_07/app/app_theme_data.dart';
-import 'package:e_commerce_app_07/app/assets_path.dart';
 import 'package:e_commerce_app_07/features/auth/ui/widgets/app_log_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:email_validator/email_validator.dart';
 
 import 'otp_verification_screen.dart';

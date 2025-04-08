@@ -62,7 +62,7 @@ void _startResendCodeTimer(){
               child: Column(
                 children: [
                   SizedBox(
-                    height: 24,
+                    height: 80,
                   ),
                   AppLogoWidget(),
                   SizedBox(
@@ -84,7 +84,7 @@ void _startResendCodeTimer(){
                     height: 6,
                   ),
                   PinCodeTextField(
-                    length: 6,
+                    length: 4,
                     obscureText: false,
                     animationType: AnimationType.fade,
                     animationDuration: Duration(milliseconds: 300),
@@ -105,6 +105,8 @@ void _startResendCodeTimer(){
                   ElevatedButton(
                     onPressed: () {
                       // if(_formKey.currentState!.validate()){}
+                      Navigator.pushNamed(context, OtpVerificationScreen.name);
+                      // Navigator.push(context, MaterialPageRoute(builder:(context)=>OtpVerificationScreen()));
                     },
                     child: Text(
                       "Next",
@@ -114,7 +116,7 @@ void _startResendCodeTimer(){
                     height: 16,
                   ),
                   //TODO:enable button when 120s is done and invisible the text
-                  //stram,timer(setState),get-x(obs)
+                  //stream,timer(setState),get-x(obs)
                    Obx(()=>Visibility(
                      visible: !_enableResendCodeButton.value,
                      child: RichText(

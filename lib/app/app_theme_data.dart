@@ -3,6 +3,7 @@ import 'package:e_commerce_app_07/app/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class AppThemeData{
+  //getter method
   static ThemeData get lightThemeData{
     return ThemeData(
       colorSchemeSeed: AppColors.themeColor,
@@ -63,3 +64,45 @@ class AppThemeData{
     );
   }
 }
+
+/*
+getter method
+static ThemeData get lightThemeData
+ => এটা হলো একটি static গেটার (static getter)।
+ এটি কোনো class বা ফাংশন না — বরং একটি property-এর মতো behave করে, but ভিতরে কোড থাকে।
+
+ */
+
+/*
+এখন ধাপে ধাপে বুঝি:
+1. static
+
+    এটা ক্লাসের মেম্বার হলেও অবজেক্ট ছাড়া অ্যাক্সেস করা যাবে।
+
+    মানে তুমি AppThemeData.lightThemeData লিখেই এক্সেস করতে পারো, কোনো AppThemeData অবজেক্ট বানানোর দরকার নেই।
+
+2. ThemeData
+
+    এটা হলো এই গেটারটি কি টাইপের ডেটা ফেরত দিচ্ছে, সেটা বোঝায়।
+
+    এখানে ThemeData হচ্ছে Flutter এর থিম সংক্রান্ত ক্লাস।
+
+3. get lightThemeData
+
+    get দিয়ে Dart জানায়, এটি একটি getter — মানে এটি একটি পড়ার জন্য প্রপার্টি, যেটা রিটার্ন করে কোনো ভ্যালু।
+
+    এখানে lightThemeData হচ্ছে propertyর   নাম।
+
+Getter vs Function
+
+Feature	                       Getter	                                                   Function
+
+লেখা হয় get দিয়ে	                yes                                                         না
+
+কল করতে () লাগে না	      AppThemeData.lightThemeData	                                   someFunction()
+
+return করে value	               yes                                                        yes
+
+parameter নেয়	                    না	                                                   yes বা না (দুটোই হতে পারে)
+
+ */
