@@ -6,6 +6,7 @@ import '../widgets/app_log_widget.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+   static const String name='/';
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -20,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _moveToNextScreen() async {
     await Future.delayed(const Duration(seconds: 2));
-    Navigator.pushReplacementNamed(context, MainBottomNavScreen.name);
+   if(mounted) Navigator.pushReplacementNamed(context, MainBottomNavScreen.name);
   }
 
   @override

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import '../../../category/ui/screens/category_list_screen.dart';
 import '../../../home/ui/screens/home_screen.dart';
 import '../controllers/main_bottom_nav_controller.dart';
 
@@ -17,9 +18,9 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   //final MainBottomNavController bottomNavController=Get.find<MainBottomNavController>();
   @override
   Widget build(BuildContext context) {
-      final List<Widget>_screens=[
+      final List<Widget>screens=[
         const HomeScreen(),
-        const HomeScreen(),
+        const CategoryListScreen(),
         const HomeScreen(),
         const HomeScreen(),
       ];
@@ -27,7 +28,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
     return GetBuilder<MainBottomNavController>(
       builder: ( bottomNavController) {
         return Scaffold(
-          body: _screens[bottomNavController.selectedIndex],
+          body: screens[bottomNavController.selectedIndex],
           bottomNavigationBar:NavigationBar(
               selectedIndex: bottomNavController.selectedIndex,
               onDestinationSelected: bottomNavController.changeIndex,
