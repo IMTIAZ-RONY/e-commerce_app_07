@@ -7,6 +7,7 @@ import '../features/auth/ui/screens/splash_screen.dart';
 import '../features/category/ui/screens/category_list_screen.dart';
 import '../features/common/ui/screens/main_bottom_nav_screen.dart';
 import '../features/home/ui/screens/home_screen.dart';
+import '../features/product/ui/screens/product_details_screen.dart';
 import '../features/product/ui/screens/product_list_screen.dart';
 import 'app_theme_data.dart';
 import 'controller_binder.dart';
@@ -21,9 +22,12 @@ class CraftyBay extends StatelessWidget {
       theme:AppThemeData.lightThemeData,
       darkTheme:AppThemeData.darkThemeData ,
       themeMode:ThemeMode.light ,
+
      ///forControllerBindings
       initialBinding: ControllerBinder(),
-     //Named Route
+
+     /// On Generate Route(argument pass korar khetre)
+
       onGenerateRoute:(RouteSettings settings){
         late Widget widget;
         if(settings.name==SplashScreen.name){
@@ -34,15 +38,17 @@ class CraftyBay extends StatelessWidget {
           widget=const OtpVerificationScreen();
         }else if(
         settings.name==CompleteProfileScreen.name){
-          widget=const CompleteProfileScreen();}
-        else if(settings.name==HomeScreen.name){
+          widget=const CompleteProfileScreen();
+        }else if(settings.name==HomeScreen.name){
           widget=const HomeScreen();
         }else if(settings.name==MainBottomNavScreen.name){
           widget=const MainBottomNavScreen();
         }else if(settings.name==CategoryListScreen.name){
           widget=const CategoryListScreen();
-        }
-        else if(
+        }else if(settings.name==ProductDetailsScreen.name){
+          int productId=settings.arguments as int;
+          widget=ProductDetailsScreen(productId: productId,);
+        } else if(
         settings.name==ProductListScreen.name){
           String name=settings.arguments as String;
           widget=ProductListScreen(categoryName: name,);
@@ -52,6 +58,9 @@ class CraftyBay extends StatelessWidget {
            return widget;
         });
       } ,
+
+      ///Named Route(Argument pass kora na lagle)
+
     /*  initialRoute: '/',
       routes: <String, WidgetBuilder>{
         '/': (context)=>const SplashScreen(),
@@ -61,10 +70,9 @@ class CraftyBay extends StatelessWidget {
         HomeScreen.name:(context)=>const HomeScreen(),
         MainBottomNavScreen.name:(context)=>const MainBottomNavScreen(),
         CategoryListScreen.name:(context)=>const CategoryListScreen(),
-        ProductListScreen.name:(context)=>const ProductListScreen(categoryName: 'Product List',),
+        ProductListScreen.name:(context)=>const ProductListScreen(),
 
       },*/
     );
   }
 }
-//complete
