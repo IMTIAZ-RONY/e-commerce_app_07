@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../../app/app_colors.dart';
 
 class ColorPickerWidget extends StatefulWidget {
-  const ColorPickerWidget({super.key, required this.colors});
+  const ColorPickerWidget({super.key, required this.colors, required this.onColorSelected});
   final List<String> colors;
+  final Function(String) onColorSelected;
 
   @override
   State<ColorPickerWidget> createState() => _ColorPickerWidgetState();
@@ -28,6 +29,7 @@ class _ColorPickerWidgetState extends State<ColorPickerWidget> {
       Widget item=getColorItemWidget(name:color, onTap: (){
         setState(() {
           _selectedColor=color;
+          widget.onColorSelected!(_selectedColor!);
         });
       }, isSelected: _selectedColor==color);
       colorItemWidgetList.add(item);
