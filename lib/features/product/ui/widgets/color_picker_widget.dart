@@ -23,15 +23,16 @@ class _ColorPickerWidgetState extends State<ColorPickerWidget> {
   }
 
   List<Widget> getColorItems(){
-    List<Widget> colorList=[];
+    List<Widget> colorItemWidgetList=[];
     for(String color in widget.colors){
-      colorList.add(getColorItemWidget(name:color, onTap: (){
+      Widget item=getColorItemWidget(name:color, onTap: (){
         setState(() {
           _selectedColor=color;
         });
-      }, isSelected: _selectedColor==color));
+      }, isSelected: _selectedColor==color);
+      colorItemWidgetList.add(item);
     }
-    return colorList;
+    return colorItemWidgetList;
   }
   Widget getColorItemWidget({required String name, required VoidCallback onTap, required bool isSelected}){
     return GestureDetector(
