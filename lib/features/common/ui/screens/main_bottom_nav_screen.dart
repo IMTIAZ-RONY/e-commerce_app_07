@@ -1,7 +1,6 @@
+import 'package:e_commerce_app_07/features/wishList/ui/screen/wish_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
 import '../../../category/ui/screens/category_list_screen.dart';
 import '../../../home/ui/screens/home_screen.dart';
 import '../controllers/main_bottom_nav_controller.dart';
@@ -22,7 +21,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
         const HomeScreen(),
         const CategoryListScreen(),
         const HomeScreen(),
-        const HomeScreen(),
+        const WishListScreen(),
       ];
 
     return GetBuilder<MainBottomNavController>(
