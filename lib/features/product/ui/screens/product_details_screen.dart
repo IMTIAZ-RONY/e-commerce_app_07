@@ -2,7 +2,7 @@ import 'package:e_commerce_app_07/features/product/ui/widgets/product_image_caro
 import 'package:flutter/material.dart';
 import '../../../../app/app_colors.dart';
 import '../widgets/color_picker_widget.dart';
-import '../widgets/product_quantity_inc_dec_button.dart';
+import '../../../common/ui/widgets/product_quantity_inc_dec_button.dart';
 import '../widgets/size_picker_widget.dart';
 
 class ProductDetailsScreen extends StatefulWidget {

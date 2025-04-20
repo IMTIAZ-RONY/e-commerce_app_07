@@ -29,7 +29,7 @@ class _ColorPickerWidgetState extends State<ColorPickerWidget> {
       Widget item=getColorItemWidget(name:color, onTap: (){
         setState(() {
           _selectedColor=color;
-          widget.onColorSelected!(_selectedColor!);
+          widget.onColorSelected(_selectedColor!);
         });
       }, isSelected: _selectedColor==color);
       colorItemWidgetList.add(item);
